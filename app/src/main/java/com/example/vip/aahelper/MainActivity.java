@@ -10,8 +10,13 @@ import android.widget.Toast;
 
 import com.example.vip.aahelper.Adpter.GridViewAdpter;
 import com.example.vip.aahelper.Base.FrameActivity;
+import com.example.vip.aahelper.Model.PeopleModel;
 import com.example.vip.aahelper.Model.SliderListItemModel;
+import com.example.vip.aahelper.Util.DBDeal;
 import com.example.vip.aahelper.View.SliderView;
+
+import java.util.ArrayList;
+import java.util.Date;
 
 public class MainActivity extends FrameActivity implements SliderView.SliderViewItemClickListener{
 
@@ -38,5 +43,18 @@ public class MainActivity extends FrameActivity implements SliderView.SliderView
     @Override
     public void sliderViewItemClick(View listItem, SliderListItemModel model, int position) {
         Toast.makeText(this,model.title,1).show();
+//        //测试数据库
+//        if (position==0){
+//            DBDeal deal = new DBDeal(this);
+//            PeopleModel people = new PeopleModel();
+//            people.isAble=1;
+//            people.time = new Date().getTime();
+//            people.name = "HS";
+//            deal.addPeople(people);
+//        }else {
+//            DBDeal deal = new DBDeal(this);
+//            ArrayList<PeopleModel> array = deal.getAllAbledPeople();
+//            Log.e("#####", "sliderViewItemClick: "+array.get(0).name);
+//        }
     }
 }
