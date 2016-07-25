@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="44dp"
+    android:minHeight="?android:attr/listPreferredItemHeight"
+    android:orientation="horizontal">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="25dp"
+        android:paddingLeft="20dp"
+        android:id="@+id/layoutSliderListItemTextView"
+        android:textColor="#671abf"
+        android:gravity="center_vertical"/>
+</LinearLayout>
