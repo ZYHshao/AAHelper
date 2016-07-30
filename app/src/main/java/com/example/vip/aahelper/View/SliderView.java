@@ -60,13 +60,15 @@ public class SliderView{
             }
         });
     }
-    private void open(){
+    public void open(){
+        isClose = false;
         RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,RelativeLayout.LayoutParams.MATCH_PARENT);
         params.addRule(RelativeLayout.BELOW,R.id.layoutTitleBar);
         bottomLyout.setLayoutParams(params);
     }
 
-    private void close(){
+    public void close(){
+        isClose=true;
         final float scale = mActivity.getResources().getDisplayMetrics().density;
         int height = (int) (68 * scale + 0.5f);
         RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,height);

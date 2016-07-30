@@ -4,10 +4,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.example.vip.aahelper.Activity.UserManagerActivity;
 import com.example.vip.aahelper.Adpter.GridViewAdpter;
 import com.example.vip.aahelper.Base.FrameActivity;
 import com.example.vip.aahelper.Model.PeopleModel;
@@ -29,6 +31,27 @@ public class MainActivity extends FrameActivity implements SliderView.SliderView
         AppendMainBody(R.layout.layout_main_gradview);
         gridView = (GridView) findViewById(R.id.mainGridView);
         gridView.setAdapter(new GridViewAdpter(this));
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                switch (i){
+                    case 0:
+                        break;
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    //人员管理模块
+                    case 5:
+                        OpenActivity(UserManagerActivity.class);
+                        break;
+                }
+            }
+        });
         creatSlider();
         //进行slider数据的绑定
         String[] stringArray = getResources().getStringArray(R.array.SliderMainActivity);

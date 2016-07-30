@@ -32,6 +32,39 @@ public class DBDeal {
         db.close();
         help.close();
     }
+    /**
+     * 更新一个人员名称
+     *
+     */
+    public void updatePeopel(PeopleModel people){
+        DBHelp help = new DBHelp(context);
+        SQLiteDatabase db = help.getReadableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("name",people.name);
+        values.put("time",people.time);
+        values.put("isAble",people.isAble);
+        String whereStr = "_id="+people._id;
+        db.update("people",values,whereStr,null);
+        db.close();
+        help.close();
+    }
+    /*
+    * 删除一个用户
+    * 注意 是逻辑删除 不是物理删除
+    *
+    * */
+    public void removePeople(PeopleModel people){
+        DBHelp help = new DBHelp(context);
+        SQLiteDatabase db = help.getReadableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("name",people.name);
+        values.put("time",people.time);
+        values.put("isAble",0);
+        String whereStr = "_id="+people._id;
+        db.update("people",values,whereStr,null);
+        db.close();
+        help.close();
+    }
     /*
     * 获取所有有效的人员list
     *
